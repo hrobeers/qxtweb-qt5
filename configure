@@ -7,7 +7,8 @@ NO_DB=0
 NO_ZEROCONF=0
 NO_OPENSSL=0
 NO_XRANDR=0
-QXT_MODULES="docs berkeley core designer widgets network sql web zeroconf"
+#QXT_MODULES="docs berkeley core designer widgets network sql web zeroconf"
+QXT_MODULES="docs core network web"
 
 # detect platform
 if uname -a | grep -iq Darwin; then
@@ -264,7 +265,7 @@ configtest()
 echo >&2 "Testing for optional external libraries."
 echo >&2 "If tests fail, some features will not be available."
 
-configtest qt4 QT
+configtest qt5 QT
 if [[ "$NO_DB" == "0" ]]; then
     configtest db DB
 fi
